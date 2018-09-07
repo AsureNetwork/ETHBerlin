@@ -4,6 +4,8 @@ Decentralized pension system
 Let's build a pension system on blockchain that is not in the hands of
 governments or insurance companies but in the hands of its users.
 
+[Take a look at the math behind.](https://github.com/AsureFoundation/ETHBerlin/blob/master/math.ipynb)
+
 # Solution
 
 The idea is to implement a pay-as-you-go pension system.  Members
