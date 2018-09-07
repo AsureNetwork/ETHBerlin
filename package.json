@@ -1,0 +1,27 @@
+{
+  "name": "ethberlin",
+  "version": "1.0.0",
+  "description": "decentralized pension system",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "truffle compile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsureFoundation/ETHBerlin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsureFoundation/ETHBerlin/issues"
+  },
+  "homepage": "https://github.com/AsureFoundation/ETHBerlin#readme",
+  "devDependencies": {
+    "truffle": "^5.0.0-beta.0"
+  }
+}
