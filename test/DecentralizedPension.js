@@ -54,10 +54,10 @@ contract('DecentralizedPension', async accounts => {
             );
 
             balance = await pensionToken.balanceOf.call(accounts[0]);
-            expect(balance).to.eq.BN(web3.utils.toWei('2'));
+            expect(balance).to.eq.BN(web3.utils.toWei('2.97'));
 
             const totalSupply = await pensionToken.totalSupply.call();
-            expect(totalSupply).to.eq.BN(web3.utils.toWei('2'));
+            expect(totalSupply).to.eq.BN(web3.utils.toWei('2.97'));
         });
     });
 
@@ -97,8 +97,8 @@ contract('DecentralizedPension', async accounts => {
 
             const newBalance = await web3.eth.getBalance(accounts[0]);
 
-            expect(newBalance - oldBalance).to.be.below(10**18);
-            expect(newBalance - oldBalance).to.be.above(10**17);
+            expect(newBalance - oldBalance).to.be.below(10 ** 18);
+            expect(newBalance - oldBalance).to.be.above(10 ** 17);
         });
     });
 });

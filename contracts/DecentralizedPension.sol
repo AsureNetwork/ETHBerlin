@@ -9,10 +9,13 @@ contract DecentralizedPension {
     //Math math;
     DecentralizedPensionToken public pensionToken;
 
+    event Debug(uint256 data);
     event Deposit(address indexed sender, uint256 amount);
     event Claim(address indexed sender, uint256 amount);
     event Withdraw(address indexed sender, uint256 myActivatedPart, uint256 distributionPercentage, uint256 distributionAmount, uint256 amount);
     event Retire(address indexed sender, uint256 amount, uint256 monthFactor, uint256 totalMonthFactor);
+
+    uint public creationTimestamp;
 
     mapping(address => bool) public isRetired;
 
@@ -31,6 +34,7 @@ contract DecentralizedPension {
 
 
     constructor(address _dateTime/*, address _math*/) public {
+        creationTimestamp = now;
         dateTime = DateTime(_dateTime);
         //math = Math(_math);
         pensionToken = new DecentralizedPensionToken();
@@ -83,7 +87,6 @@ contract DecentralizedPension {
         uint256 _tokenAmount;
         if (_amount >= _targetPrice) {
             _tokenAmount = (1 + ((_amount - _targetPrice + 10 ** 18) / (_maxAmount - _targetPrice + 10 ** 18))) * bonusFactor();
-            // 1 + ((1-1+1) / (1-1+1) * 1000
         } else {
             _tokenAmount = ((_amount - _minAmount) / (_targetPrice - _minAmount)) * bonusFactor();
         }
@@ -122,19 +125,28 @@ contract DecentralizedPension {
             distributionPercentage = totalMonthFactor / pensionToken.totalSupply();
         }
 
-        uint256 distributionAmount = (globalFond * distributionPercentage) + totalDepositsAmountByMonth[_year][_month] * (1 - distributionPercentage);
+        //this.value
+
+        uint256 distributionAmount = (address(this).balance * distributionPercentage) + totalDepositsAmountByMonth[_year][_month] * (1 - distributionPercentage);
 
         uint256 pensionPayout = distributionAmount * myActivatedPart;
 
         msg.sender.transfer(pensionPayout);
         emit Withdraw(msg.sender, myActivatedPart, distributionPercentage, distributionAmount, pensionPayout);
+        emit Debug(address(this).balance);
 
         return true;
     }
 
-    function bonusFactor() internal pure returns (uint256) {
-        return 1000;
-        // (135 * math.ln(_yearsRunning));
+    function bonusFactor() internal view returns (uint256) {
+        uint256 _yearsRunning = 1 + dateTime.getYear(now) - dateTime.getYear(creationTimestamp);
+
+        uint256 _bonusFactor = 1500 - (15 * _yearsRunning);
+        if (_bonusFactor < 1000) {
+            _bonusFactor = 1000;
+        }
+
+        return _bonusFactor;
     }
 
     /*
