@@ -9,7 +9,7 @@ import './css/oswald.css'
 import './css/open-sans.css'
 import './css/pure-min.css'
 import './App.css'
-import { Demo } from "./layouts/demo/Demo";
+import  DemoContainer  from "./layouts/demo/DemoContainer";
 import { Simulation } from "./layouts/simulation/Simulation";
 import ETHBerlinLogo from './content/ethberlin_logo.png';
 import AsureLogo from './content/asure.io.logo.png';
@@ -44,7 +44,7 @@ class App extends Component {
                 </Col>
                 <Col xs="9">
                     <Route exact path="/" component={Home}/>
-                    <Route path="/demo" component={Demo}/>
+                    <Route path="/demo" component={DemoContainer}/>
                     <Route path="/simulation" component={Simulation}/>
                 </Col>
             </Row>
