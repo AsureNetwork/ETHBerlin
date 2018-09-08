@@ -35,8 +35,8 @@ export default class Demo extends Component {
                     <strong>
                         <ContractDataExt
                             contract="DecentralizedPension"
-                            method="totalDepositsAmountByMonth"
-                            methodArgs={[2018, 9]}
+                            method="depositsByUser"
+                            methodArgs={[this.props.accounts[0], 2018, 9]}
                             render={data => Web3.utils.fromWei(data)}>
                         </ContractDataExt>
                         {' '} ETH {' '}
