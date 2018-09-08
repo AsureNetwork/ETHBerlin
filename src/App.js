@@ -10,6 +10,7 @@ import './css/open-sans.css'
 import './css/pure-min.css'
 import './App.css'
 import { Demo } from "./layouts/demo/Demo";
+import { Simulation } from "./layouts/simulation/Simulation";
 
 class App extends Component {
   render() {
@@ -23,22 +24,22 @@ class App extends Component {
                         </NavItem>
                         <NavItem>
                             <NavLink to="/demo" activeClassName="active" tag={RRNavLink}>Demo</NavLink>
-
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#">Simulation</NavLink>
+                            <NavLink to="/simulation" activeClassName="active" tag={RRNavLink}>Simulation</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/AsureFoundation/ethberlin">Github Repository</NavLink>
+                            <NavLink target="_blank" href="https://github.com/AsureFoundation/ethberlin">Github Repository</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://www.asure.io">asure.io</NavLink>
+                            <NavLink target="_blank" href="https://www.asure.io">asure.io</NavLink>
                         </NavItem>
                     </Nav>
                 </Col>
                 <Col xs="9">
                     <Route exact path="/" component={Home}/>
                     <Route path="/demo" component={Demo}/>
+                    <Route path="/simulation" component={Simulation}/>
                 </Col>
             </Row>
         </main>
