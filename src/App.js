@@ -15,7 +15,7 @@ import { Simulation } from "./layouts/simulation/Simulation";
 class App extends Component {
   render() {
     return (
-        <main className="container">
+        <main className="container container-fluid ">
             <Row>
                 <Col xs="3">
                     <Nav vertical>
@@ -40,6 +40,12 @@ class App extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route path="/demo" component={DemoContainer}/>
                     <Route path="/simulation" component={Simulation}/>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col xs="12 footer">
+                    Create with love at @ETHBerlin from @Asure
                 </Col>
             </Row>
         </main>

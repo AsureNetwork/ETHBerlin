@@ -100,3 +100,28 @@ ul li:not(:last-child) {
   background: darkseagreen;
   border: 1px solid darkgreen;
 }
+
+.container{
+  background-color: #364754;
+}
+
+.nav-item{
+  background-color: #eaecef;
+}
+
+.nav.flex-column{
+  padding-top: 30px;
+}
+
+a{
+  color: #364754 !important;
+}
+*{
+  border-radius: 0 !important;
+}
+
+.footer{
+  color: #e0e0e0;
+  text-align: center;
+  padding: 50px 0px 10px 0px;
+}
