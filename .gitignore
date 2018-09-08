@@ -1,6 +1,8 @@
 .idea
 .ipynb_checkpoints
 
+old/
+
 # Logs
 logs
 *.log

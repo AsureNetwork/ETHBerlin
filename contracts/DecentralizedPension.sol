@@ -2,11 +2,9 @@ pragma solidity ^0.4.0;
 
 import "./DecentralizedPensionToken.sol";
 import "./DateTime.sol";
-//import "./Math.sol";
 
 contract DecentralizedPension {
     DateTime dateTime;
-    //Math math;
     DecentralizedPensionToken public pensionToken;
 
     event Debug(uint256 data);
@@ -33,10 +31,9 @@ contract DecentralizedPension {
     uint256 public globalFond;
 
 
-    constructor(address _dateTime/*, address _math*/) public {
+    constructor(address _dateTime) public {
         creationTimestamp = now;
         dateTime = DateTime(_dateTime);
-        //math = Math(_math);
         pensionToken = new DecentralizedPensionToken();
     }
 
