@@ -11,6 +11,8 @@ import './css/pure-min.css'
 import './App.css'
 import { Demo } from "./layouts/demo/Demo";
 import { Simulation } from "./layouts/simulation/Simulation";
+import ETHBerlinLogo from './content/ethberlin_logo.png';
+import AsureLogo from './content/asure.io.logo.png';
 
 class App extends Component {
   render() {
@@ -18,6 +20,11 @@ class App extends Component {
         <main className="container container-fluid ">
             <Row>
                 <Col xs="3">
+                    <NavLink to="/" activeClassName="active" tag={RRNavLink}>
+                        <img src={AsureLogo} width="260px" />
+                    </NavLink>
+
+
                     <Nav vertical>
                         <NavItem>
                             <NavLink to="/" activeClassName="active" tag={RRNavLink}>Intro</NavLink>
@@ -31,10 +38,9 @@ class App extends Component {
                         <NavItem>
                             <NavLink target="_blank" href="https://github.com/AsureFoundation/ethberlin">Github Repository</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink target="_blank" href="https://www.asure.io">asure.io</NavLink>
-                        </NavItem>
                     </Nav>
+
+                    <img src={ETHBerlinLogo} width="260px" />
                 </Col>
                 <Col xs="9">
                     <Route exact path="/" component={Home}/>
@@ -45,7 +51,7 @@ class App extends Component {
 
             <Row>
                 <Col xs="12 footer">
-                    Create with love at @ETHBerlin from @Asure
+                    Made with love at @ETHBerlin from @Asure
                 </Col>
             </Row>
         </main>
