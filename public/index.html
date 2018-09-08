@@ -13,7 +13,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>ETHBerlin - Decentralized pension system</title>
+    <title>ETHBerlin - Decentralized pension system by ASURE.io</title>
+    <script type="application/javascript">
+      if(location.host === "ethberlin.asure.io" && location.protocol === "http:"){
+        window.location = "https://ETHBerlin.asure.io";
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
