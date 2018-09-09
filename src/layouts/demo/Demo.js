@@ -73,26 +73,7 @@ export default class Demo extends Component {
     renderContributor() {
         return (
             <div>
-                <Button>Retire</Button>
-                <hr/>
-                <p>
-                    Your total contributions in {moment().format('MMM')}.{' '}
-                    {this.currentYear} have been{' '}
-                    <strong>
-                        <ContractDataExt
-                            contract="DecentralizedPension"
-                            method="depositsByUser"
-                            methodArgs={[
-                                this.props.accounts[0],
-                                this.currentYear,
-                                this.currentMonth
-                            ]}
-                            render={data => Web3.utils.fromWei(data)}
-                        />{' '}
-                        ETH{' '}
-                    </strong>
-                    so far.
-                </p>
+
 
                 <h2>Deposit</h2>
 
@@ -118,6 +99,32 @@ export default class Demo extends Component {
 
                 <hr/>
 
+                <h2>Retire</h2>
+
+
+
+                <p>
+                    Your total contributions in {moment().format('MMM')}.{' '}
+                    {this.currentYear} have been{' '}
+                    <strong>
+                        <ContractDataExt
+                            contract="DecentralizedPension"
+                            method="depositsByUser"
+                            methodArgs={[
+                                this.props.accounts[0],
+                                this.currentYear,
+                                this.currentMonth
+                            ]}
+                            render={data => Web3.utils.fromWei(data)}
+                        />{' '}
+                        ETH{' '}
+                    </strong>
+                    so far.
+                </p>
+
+                <Button>Retire</Button>
+
+                <hr/>
                 <h2>Claim tokens</h2>
                 {this.lastMonthDeposits == 0 ? (
                     <p>
