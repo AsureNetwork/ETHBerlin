@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import PropTypes from 'prop-types';
 import Web3 from 'web3';
+import moment from 'moment';
 import { ContractDataExt } from "../../util/ContractDataExt";
 
 export default class Demo extends Component {
@@ -12,6 +13,9 @@ export default class Demo extends Component {
     state = {
         amount: 0
     };
+
+    currentYear = moment().year();
+    currentMonth = moment().month() + 1;
 
     constructor(props, context) {
         super(props, context);
@@ -31,17 +35,17 @@ export default class Demo extends Component {
                 <h1>Pension overview</h1>
 
                 <p>
-                    Your total contributions in Sep. 2018 have been {' '}
+                    Your total contributions in {moment().format('MMM')}. {this.currentYear} have been {' '}
                     <strong>
                         <ContractDataExt
                             contract="DecentralizedPension"
-                            method="totalDepositsAmountByMonth"
-                            methodArgs={[2018, 9]}
+                            method="depositsByUser"
+                            methodArgs={[this.props.accounts[0], this.currentYear, this.currentMonth]}
                             render={data => Web3.utils.fromWei(data)}>
                         </ContractDataExt>
                         {' '} ETH {' '}
                     </strong>
-                     so far.
+                    so far.
                 </p>
 
                 <h2>Deposit</h2>
