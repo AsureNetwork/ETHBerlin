@@ -32,19 +32,19 @@ class Home extends Component {
                         </p>
                         <ListGroup>
                             <ListGroupItem>
-                                Giving people who join early, more</ListGroupItem>
+                                ✔ Giving people who join early, more</ListGroupItem>
                             <ListGroupItem>
-                                Paying people a higher pension if they made higher contributions
+                                ✔ Paying people a higher pension if they made higher contributions
                             </ListGroupItem>
                             <ListGroupItem>
-                                Paying people a longer pension if they contributed for a long time
+                                ✔ Paying people a longer pension if they contributed for a long time
                             </ListGroupItem>
                         </ListGroup>
                         <hr className="my-2"/>
                         <p>
                             .</p>
-                        <p className="lead">
-                            <Link to={"/demo"}>Start contributing to the pension system now</Link>
+                        <p className="lead center-block">
+                            <Link className="btn btn-primary" to={"/demo"}>Start contributing to the pension system now</Link>
                         </p>
                     </Jumbotron>
                 </Col>

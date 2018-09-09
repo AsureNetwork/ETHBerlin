@@ -124,3 +124,11 @@ a{
   text-align: center;
   padding: 50px 0px 10px 0px;
 }
+
+a.btn{
+  color: #fff !important;
+}
+
+.center-block{
+  text-align: center;
+}
