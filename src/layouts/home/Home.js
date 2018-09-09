@@ -47,7 +47,8 @@ class Home extends Component {
 
 
                 <iframe src="https://www.slideshare.net/PaulMizel1/slideshelf" width="760px" height="570px"
-                        frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" >
+                        frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"
+                        allowFullScreen>
                 </iframe>
             </div>
         )
