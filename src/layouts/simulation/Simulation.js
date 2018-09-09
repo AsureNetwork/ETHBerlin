@@ -7,6 +7,9 @@ export class Simulation extends Component {
             <div>
                 <h1>Simulation</h1>
                 <Alert color="dark">To be implemented :)</Alert>
+
+
+
             </div>
         );
     }

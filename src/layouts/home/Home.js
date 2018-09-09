@@ -44,6 +44,11 @@ class Home extends Component {
                         <p className="lead center-block">
                             <Link className="btn btn-primary" to={"/demo"}>Start contributing to the pension system now</Link>
                         </p>
+
+
+                <iframe src="https://www.slideshare.net/PaulMizel1/slideshelf" width="760px" height="570px"
+                        frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" >
+                </iframe>
             </div>
         )
     }
