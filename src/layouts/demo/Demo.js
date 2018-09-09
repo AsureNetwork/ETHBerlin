@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Alert, Button, Form, FormGroup, Input, Label } from "reactstrap";
 import PropTypes from 'prop-types';
 import Web3 from 'web3';
 import moment from 'moment';
@@ -42,13 +42,11 @@ export default class Demo extends Component {
         console.log(tx)
     };
 
-    render() {
+    renderContributor() {
         return (
             <div>
-                <h1>Your pension overview</h1>
-
-                <p>Your current status is <strong>{this.isRetired ? 'Pensioner' : 'Contributor'}</strong></p>
-
+                <Button>Retire</Button>
+                <hr/>
                 <p>
                     Your total contributions in {moment().format('MMM')}. {this.currentYear} have been {' '}
                     <strong>
@@ -80,9 +78,35 @@ export default class Demo extends Component {
                 <hr/>
 
                 <h2>Claim tokens</h2>
-                <p>
+                <Alert color="dark">
+                    To be implemented :)
+                </Alert>
+            </div>
+        );
+    }
 
+    renderPensioner() {
+        return (
+            <div>
+                <h2>Withdraw</h2>
+
+                <Alert color="dark">
+                    To be implemented :)
+                </Alert>
+            </div>
+        );
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Your pension overview</h1>
+
+                <p>
+                    Your current status is <strong>{this.isRetired ? 'Pensioner' : 'Contributor'}</strong>
                 </p>
+                <hr/>
+                {this.isRetired ? this.renderPensioner() : this.renderContributor()}
             </div>
         );
     }

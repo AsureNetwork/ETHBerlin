@@ -93,14 +93,6 @@ ul li:not(:last-child) {
   display: inline-block;
 }
 
-/* ALERTS */
-
-.alert {
-  padding: .5rem;
-  color: darkgreen;
-  background: darkseagreen;
-  border: 1px solid darkgreen;
-}
 
 .container{
   background-color: #364754;
