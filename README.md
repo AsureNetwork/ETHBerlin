@@ -22,7 +22,7 @@ membership by
 - paying people a higher pension if they paid higher contribution
 - paying people a longer pension if they paid for a long time
 
-## Team Awesome
+## Members of Team Awesome
 
 - Paul Mizel
 - Fabian Raetz
