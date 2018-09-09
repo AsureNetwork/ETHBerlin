@@ -58,7 +58,8 @@ class App extends Component {
 
             <Row>
                 <Col xs="12 footer">
-                    Made with love at @ETHBerlin from @Asure
+
+                    © 2018 Asure — Made with <span className="herz herz-beat">❤</span> at @ETHBerlin
                 </Col>
             </Row>
         </main>

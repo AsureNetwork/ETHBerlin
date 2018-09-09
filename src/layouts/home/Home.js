@@ -6,9 +6,7 @@ import paygInfo from '../../content/payg.png'
 class Home extends Component {
     render() {
         return (
-            <Row>
-                <Col xs="12">
-                    <Jumbotron>
+            <div>
                         <h1 className="display-3">
                             Welcome to your decentralized pension!
                         </h1>
@@ -46,9 +44,7 @@ class Home extends Component {
                         <p className="lead center-block">
                             <Link className="btn btn-primary" to={"/demo"}>Start contributing to the pension system now</Link>
                         </p>
-                    </Jumbotron>
-                </Col>
-            </Row>
+            </div>
         )
     }
 }

@@ -132,3 +132,97 @@ a.btn{
 .center-block{
   text-align: center;
 }
+
+.herz{
+  color: #e00;
+}
+
+
+.herz-beat {
+  -webkit-animation: herz-beat 5s ease infinite;
+  animation: herz-beat 5s ease infinite
+}
+
+@-webkit-keyframes herz-beat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  5% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+
+  20% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  35% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  55% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@keyframes herz-beat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  5% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+
+  20% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  35% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  55% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
