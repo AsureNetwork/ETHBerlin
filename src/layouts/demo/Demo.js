@@ -38,7 +38,6 @@ export default class Demo extends Component {
     get isRetired() {
         const decentralizedPension = this.props.contracts.DecentralizedPension;
         if (decentralizedPension.isRetired[this.isRetiredCacheId]) {
-            console.log(decentralizedPension.isRetired[this.isRetiredCacheId].value);
             return decentralizedPension.isRetired[this.isRetiredCacheId].value;
         }
 
@@ -48,9 +47,6 @@ export default class Demo extends Component {
     get lastMonthDeposits() {
         const decentralizedPension = this.props.contracts.DecentralizedPension;
         if (decentralizedPension.depositsByUser[this.lastMonthDepositsCacheId]) {
-            console.log(
-                decentralizedPension.depositsByUser[this.lastMonthDepositsCacheId].value
-            );
             return decentralizedPension.depositsByUser[this.lastMonthDepositsCacheId]
                 .value;
         }
@@ -70,12 +66,40 @@ export default class Demo extends Component {
         console.log('claim');
     };
 
+
+    onRetire = async () => {
+        // TODO: fetch balance, approve, and pass to retire
+        const tx = await this.contracts.DecentralizedPension.methods
+            .retire('0')
+            .send();
+        console.log(tx);
+    };
+
     renderContributor() {
         return (
             <div>
 
 
                 <h2>Deposit</h2>
+
+                <p>
+                    Your total contributions in {moment().format('MMM')}.{' '}
+                    {this.currentYear} have been{' '}
+                    <strong>
+                        <ContractDataExt
+                            contract="DecentralizedPension"
+                            method="depositsByUser"
+                            methodArgs={[
+                                this.props.accounts[0],
+                                this.currentYear,
+                                this.currentMonth
+                            ]}
+                            render={data => Web3.utils.fromWei(data)}
+                        />{' '}
+                        ETH{' '}
+                    </strong>
+                    so far.
+                </p>
 
                 <p>Deposit (more) ETH for the current month.</p>
 
@@ -99,32 +123,6 @@ export default class Demo extends Component {
 
                 <hr/>
 
-                <h2>Retire</h2>
-
-
-
-                <p>
-                    Your total contributions in {moment().format('MMM')}.{' '}
-                    {this.currentYear} have been{' '}
-                    <strong>
-                        <ContractDataExt
-                            contract="DecentralizedPension"
-                            method="depositsByUser"
-                            methodArgs={[
-                                this.props.accounts[0],
-                                this.currentYear,
-                                this.currentMonth
-                            ]}
-                            render={data => Web3.utils.fromWei(data)}
-                        />{' '}
-                        ETH{' '}
-                    </strong>
-                    so far.
-                </p>
-
-                <Button>Retire</Button>
-
-                <hr/>
                 <h2>Claim tokens</h2>
                 {this.lastMonthDeposits == 0 ? (
                     <p>
@@ -140,6 +138,10 @@ export default class Demo extends Component {
                         <Button onClick={this.onClaim}>Claim tokens</Button>
                     </div>
                 )}
+
+                <hr/>
+                <h2>Retire</h2>
+                <Button onClick={this.onRetire}>Retire</Button>
             </div>
         );
     }
