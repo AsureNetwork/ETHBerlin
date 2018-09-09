@@ -29,15 +29,23 @@ membership by
 - Gamal Schmuck
 - Andrey Kuchaev
 
+## How-To Start
+1. Start your Browser with MetaMask and chose the Rinkeby Network
+2. You need ETH on Rinkeby Testnet (http://faucet.rinkeby.io)
+3. Go to [https://ethberlin.asure.io](https://ethberlin.asure.io) 
+
 ## Deployment
 
 The dApp is hosted on GitHub Pages. SmartContracts are 
 only deployed to the Rinkeby testnet.
 
-## How-To Start
-1. Start your Browser with MetaMask and chose the Rinkeby Network
-2. You need ETH on Rinkeby Testnet (http://faucet.rinkeby.io)
-3. Go to [https://ethberlin.asure.io](https://ethberlin.asure.io) 
+## Used technologies
+
+- [drizzle truffle box](https://truffleframework.com/boxes/drizzle) / used as a starting point
+    * includes tufflejs, react, redux, and drizzle
+- [Ganache](https://truffleframework.com/ganache) / used for local development and to run our unit tests
+- [openzeppelin](https://openzeppelin.org) / base class for our ERC20 [DecentralizedPensionToken](https://github.com/AsureFoundation/ETHBerlin/blob/master/contracts/DecentralizedPensionToken.sol)
+
 
 ## Links
 
