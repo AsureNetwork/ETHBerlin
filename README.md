@@ -34,6 +34,13 @@ membership by
 The dApp is hosted on GitHub Pages. SmartContracts are 
 only deployed to the Rinkeby testnet.
 
+## Used technologies
+
+- [drizzle truffle box](https://truffleframework.com/boxes/drizzle) / used as a starting point
+    * includes tufflejs, react, redux, and drizzle
+- [Ganache](https://truffleframework.com/ganache) / used for local development and to run our unit tests
+- [openzeppelin](https://openzeppelin.org) / base class for our ERC20 [DecentralizedPensionToken](https://github.com/AsureFoundation/ETHBerlin/blob/master/contracts/DecentralizedPensionToken.sol)
+
 ## Links
 
 - [Presentation](https://github.com/AsureFoundation/ETHBerlin/blob/master/Decentralized%20Pension%20System.pdf)
