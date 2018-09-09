@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Alert, Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Alert, Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Web3 from 'web3';
 import moment from 'moment';
-import { ContractDataExt } from "../../util/ContractDataExt";
+import { ContractDataExt } from '../../util/ContractDataExt';
 
 export default class Demo extends Component {
     static contextTypes = {
@@ -23,7 +23,16 @@ export default class Demo extends Component {
         this.account = this.props.accounts[0];
         this.contracts = context.drizzle.contracts;
 
-        this.isRetiredCacheId = this.contracts.DecentralizedPension.methods.isRetired.cacheCall(this.account);
+        const lastMonth = moment().subtract('1', "month");
+
+        this.lastMonthDepositsCacheId = this.contracts.DecentralizedPension.methods.depositsByUser.cacheCall(
+            this.account,
+            lastMonth.year(),
+            lastMonth.month() + 1
+        );
+        this.isRetiredCacheId = this.contracts.DecentralizedPension.methods.isRetired.cacheCall(
+            this.account
+        );
     }
 
     get isRetired() {
@@ -36,10 +45,29 @@ export default class Demo extends Component {
         return false;
     }
 
+    get lastMonthDeposits() {
+        const decentralizedPension = this.props.contracts.DecentralizedPension;
+        if (decentralizedPension.depositsByUser[this.lastMonthDepositsCacheId]) {
+            console.log(
+                decentralizedPension.depositsByUser[this.lastMonthDepositsCacheId].value
+            );
+            return decentralizedPension.depositsByUser[this.lastMonthDepositsCacheId]
+                .value;
+        }
+
+        return '0';
+    }
+
     onDeposit = async () => {
         const amountInWei = Web3.utils.toWei(this.state.amount);
-        const tx = await this.contracts.DecentralizedPension.methods.deposit(amountInWei).send({value: amountInWei});
-        console.log(tx)
+        const tx = await this.contracts.DecentralizedPension.methods
+            .deposit(amountInWei)
+            .send({value: amountInWei});
+        console.log(tx);
+    };
+
+    onClaim = async () => {
+        console.log('claim');
     };
 
     renderContributor() {
@@ -48,15 +76,20 @@ export default class Demo extends Component {
                 <Button>Retire</Button>
                 <hr/>
                 <p>
-                    Your total contributions in {moment().format('MMM')}. {this.currentYear} have been {' '}
+                    Your total contributions in {moment().format('MMM')}.{' '}
+                    {this.currentYear} have been{' '}
                     <strong>
                         <ContractDataExt
                             contract="DecentralizedPension"
                             method="depositsByUser"
-                            methodArgs={[this.props.accounts[0], this.currentYear, this.currentMonth]}
-                            render={data => Web3.utils.fromWei(data)}>
-                        </ContractDataExt>
-                        {' '} ETH {' '}
+                            methodArgs={[
+                                this.props.accounts[0],
+                                this.currentYear,
+                                this.currentMonth
+                            ]}
+                            render={data => Web3.utils.fromWei(data)}
+                        />{' '}
+                        ETH{' '}
                     </strong>
                     so far.
                 </p>
@@ -67,10 +100,18 @@ export default class Demo extends Component {
 
                 <Form inline>
                     <FormGroup>
-                        <Label for="amount" hidden>Email</Label>
-                        <Input type="number" name="amount" id="amount" placeholder="ETH" onChange={evt => {
-                            this.setState({amount: evt.target.value});
-                        }}/>
+                        <Label for="amount" hidden>
+                            Email
+                        </Label>
+                        <Input
+                            type="number"
+                            name="amount"
+                            id="amount"
+                            placeholder="ETH"
+                            onChange={evt => {
+                                this.setState({amount: evt.target.value});
+                            }}
+                        />
                     </FormGroup>
                     <Button onClick={this.onDeposit}>Deposit</Button>
                 </Form>
@@ -78,9 +119,20 @@ export default class Demo extends Component {
                 <hr/>
 
                 <h2>Claim tokens</h2>
-                <Alert color="dark">
-                    To be implemented :)
-                </Alert>
+                {this.lastMonthDeposits == 0 ? (
+                    <p>
+                        You did not deposit anything last month. Therefore, you can not
+                        claim token.
+                    </p>
+                ) : (
+                    <div>
+                        <p>
+                            Last month, you deposited {' '}
+                            <strong>{Web3.utils.fromWei(this.lastMonthDeposits)} ETH</strong>.
+                        </p>
+                        <Button onClick={this.onClaim}>Claim tokens</Button>
+                    </div>
+                )}
             </div>
         );
     }
@@ -90,9 +142,7 @@ export default class Demo extends Component {
             <div>
                 <h2>Withdraw</h2>
 
-                <Alert color="dark">
-                    To be implemented :)
-                </Alert>
+                <Alert color="dark">To be implemented :)</Alert>
             </div>
         );
     }
@@ -103,7 +153,8 @@ export default class Demo extends Component {
                 <h1>Your pension overview</h1>
 
                 <p>
-                    Your current status is <strong>{this.isRetired ? 'Pensioner' : 'Contributor'}</strong>
+                    Your current status is{' '}
+                    <strong>{this.isRetired ? 'Pensioner' : 'Contributor'}</strong>
                 </p>
                 <hr/>
                 {this.isRetired ? this.renderPensioner() : this.renderContributor()}
