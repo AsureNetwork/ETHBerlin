@@ -32,7 +32,7 @@ export default class Demo extends Component {
     render() {
         return (
             <div>
-                <h1>Pension overview</h1>
+                <h1>Your pension overview</h1>
 
                 <p>
                     Your total contributions in {moment().format('MMM')}. {this.currentYear} have been {' '}
