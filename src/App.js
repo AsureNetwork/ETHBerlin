@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col, Nav, NavItem, NavLink, Row } from 'reactstrap';
+import { Col, Nav, NavItem, NavLink, Row, Jumbotron } from 'reactstrap';
 import { Route } from "react-router";
 import { NavLink as RRNavLink } from 'react-router-dom';
 import Home from "./layouts/home/Home";
@@ -20,8 +20,9 @@ class App extends Component {
         <main className="container container-fluid ">
             <Row>
                 <Col xs="3">
+
                     <NavLink to="/" activeClassName="active" tag={RRNavLink}>
-                        <img src={AsureLogo} width="260px" />
+                        <img src={AsureLogo} width="240px" />
                     </NavLink>
 
 
@@ -43,9 +44,15 @@ class App extends Component {
                     <img src={ETHBerlinLogo} width="260px" />
                 </Col>
                 <Col xs="9">
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/demo" component={DemoContainer}/>
-                    <Route path="/simulation" component={Simulation}/>
+                    <Row>
+                        <Col xs="12">
+                            <Jumbotron>
+                                    <Route exact path="/" component={Home}/>
+                                    <Route path="/demo" component={DemoContainer}/>
+                                    <Route path="/simulation" component={Simulation}/>
+                            </Jumbotron>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
 

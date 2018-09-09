@@ -28,8 +28,7 @@ contract DecentralizedPension {
     mapping(address => uint256) public monthFactors;
     uint256 public totalMonthFactor;
 
-    uint256 public globalFond;
-
+    //uint256 public globalFond;
 
     constructor(address _dateTime) public {
         creationTimestamp = now;
@@ -94,6 +93,9 @@ contract DecentralizedPension {
         return true;
     }
 
+    /*
+     * @dev Call with amount of DPT to start the pension retiretime
+     */
     function retire(uint256 _amount) public returns (bool)  {
         require(!isRetired[msg.sender], "msg.sender must not be retired");
 
@@ -108,7 +110,9 @@ contract DecentralizedPension {
 
         return true;
     }
-
+    /*
+    * @dev payout the  pension
+    */
     function withdraw(uint16 _year, uint8 _month) public returns (bool) {
         require(isRetired[msg.sender], "msg.sender must be retired");
         require(!hasWithdrawed[_year][_month], "withdrawal only allowed once");
@@ -151,5 +155,17 @@ contract DecentralizedPension {
      */
     function targetPrice(uint16 _year, uint8 _month) internal view returns (uint256) {
         return totalDepositsAmountByMonth[_year][_month] / totalDepositsByMonth[_year][_month];
+    }
+
+    function getMonthPaidCount() public view returns (uint256){
+        return monthPaidCount[msg.sender];
+    }
+
+    function getMonthFactors() public view returns (uint256){
+        return monthFactors[msg.sender];
+    }
+
+    function IsRetired() public view returns (bool){
+        return isRetired[msg.sender];
     }
 }

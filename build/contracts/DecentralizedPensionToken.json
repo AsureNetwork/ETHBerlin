@@ -428,14 +428,14 @@
     "absolutePath": "/C/git/ETHBerlin/contracts/DecentralizedPensionToken.sol",
     "exportedSymbols": {
       "DecentralizedPensionToken": [
-        1415
+        1446
       ]
     },
-    "id": 1416,
+    "id": 1447,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1399,
+        "id": 1430,
         "literals": [
           "solidity",
           "^",
@@ -448,10 +448,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol",
-        "id": 1400,
+        "id": 1431,
         "nodeType": "ImportDirective",
-        "scope": 1416,
-        "sourceUnit": 2363,
+        "scope": 1447,
+        "sourceUnit": 2394,
         "src": "28:71:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -459,10 +459,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol",
-        "id": 1401,
+        "id": 1432,
         "nodeType": "ImportDirective",
-        "scope": 1416,
-        "sourceUnit": 2292,
+        "scope": 1447,
+        "sourceUnit": 2323,
         "src": "101:71:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -473,17 +473,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1402,
+              "id": 1433,
               "name": "ERC20Mintable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2362,
+              "referencedDeclaration": 2393,
               "src": "214:13:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Mintable_$2362",
+                "typeIdentifier": "t_contract$_ERC20Mintable_$2393",
                 "typeString": "contract ERC20Mintable"
               }
             },
-            "id": 1403,
+            "id": 1434,
             "nodeType": "InheritanceSpecifier",
             "src": "214:13:2"
           },
@@ -491,49 +491,49 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1404,
+              "id": 1435,
               "name": "ERC20Burnable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2291,
+              "referencedDeclaration": 2322,
               "src": "229:13:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Burnable_$2291",
+                "typeIdentifier": "t_contract$_ERC20Burnable_$2322",
                 "typeString": "contract ERC20Burnable"
               }
             },
-            "id": 1405,
+            "id": 1436,
             "nodeType": "InheritanceSpecifier",
             "src": "229:13:2"
           }
         ],
         "contractDependencies": [
-          1648,
-          2245,
-          2291,
-          2362,
-          2431
+          1679,
+          2276,
+          2322,
+          2393,
+          2462
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1415,
+        "id": 1446,
         "linearizedBaseContracts": [
-          1415,
-          2291,
-          2362,
-          1648,
-          2245,
-          2431
+          1446,
+          2322,
+          2393,
+          1679,
+          2276,
+          2462
         ],
         "name": "DecentralizedPensionToken",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 1408,
+            "id": 1439,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 1415,
+            "scope": 1446,
             "src": "250:59:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -542,7 +542,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1406,
+              "id": 1437,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "250:6:2",
@@ -554,7 +554,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "446563656e7472616c697a65642050656e73696f6e20546f6b656e",
-              "id": 1407,
+              "id": 1438,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -573,10 +573,10 @@
           },
           {
             "constant": true,
-            "id": 1411,
+            "id": 1442,
             "name": "symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 1415,
+            "scope": 1446,
             "src": "316:37:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -585,7 +585,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1409,
+              "id": 1440,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "316:6:2",
@@ -597,7 +597,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "445054",
-              "id": 1410,
+              "id": 1441,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -616,10 +616,10 @@
           },
           {
             "constant": true,
-            "id": 1414,
+            "id": 1445,
             "name": "decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 1415,
+            "scope": 1446,
             "src": "360:35:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -628,7 +628,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 1412,
+              "id": 1443,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "360:5:2",
@@ -640,7 +640,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3138",
-              "id": 1413,
+              "id": 1444,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -658,7 +658,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1416,
+        "scope": 1447,
         "src": "176:223:2"
       }
     ],
@@ -668,14 +668,14 @@
     "absolutePath": "/C/git/ETHBerlin/contracts/DecentralizedPensionToken.sol",
     "exportedSymbols": {
       "DecentralizedPensionToken": [
-        1415
+        1446
       ]
     },
-    "id": 1416,
+    "id": 1447,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1399,
+        "id": 1430,
         "literals": [
           "solidity",
           "^",
@@ -688,10 +688,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol",
-        "id": 1400,
+        "id": 1431,
         "nodeType": "ImportDirective",
-        "scope": 1416,
-        "sourceUnit": 2363,
+        "scope": 1447,
+        "sourceUnit": 2394,
         "src": "28:71:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -699,10 +699,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol",
-        "id": 1401,
+        "id": 1432,
         "nodeType": "ImportDirective",
-        "scope": 1416,
-        "sourceUnit": 2292,
+        "scope": 1447,
+        "sourceUnit": 2323,
         "src": "101:71:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -713,17 +713,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1402,
+              "id": 1433,
               "name": "ERC20Mintable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2362,
+              "referencedDeclaration": 2393,
               "src": "214:13:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Mintable_$2362",
+                "typeIdentifier": "t_contract$_ERC20Mintable_$2393",
                 "typeString": "contract ERC20Mintable"
               }
             },
-            "id": 1403,
+            "id": 1434,
             "nodeType": "InheritanceSpecifier",
             "src": "214:13:2"
           },
@@ -731,49 +731,49 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1404,
+              "id": 1435,
               "name": "ERC20Burnable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2291,
+              "referencedDeclaration": 2322,
               "src": "229:13:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Burnable_$2291",
+                "typeIdentifier": "t_contract$_ERC20Burnable_$2322",
                 "typeString": "contract ERC20Burnable"
               }
             },
-            "id": 1405,
+            "id": 1436,
             "nodeType": "InheritanceSpecifier",
             "src": "229:13:2"
           }
         ],
         "contractDependencies": [
-          1648,
-          2245,
-          2291,
-          2362,
-          2431
+          1679,
+          2276,
+          2322,
+          2393,
+          2462
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1415,
+        "id": 1446,
         "linearizedBaseContracts": [
-          1415,
-          2291,
-          2362,
-          1648,
-          2245,
-          2431
+          1446,
+          2322,
+          2393,
+          1679,
+          2276,
+          2462
         ],
         "name": "DecentralizedPensionToken",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 1408,
+            "id": 1439,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 1415,
+            "scope": 1446,
             "src": "250:59:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -782,7 +782,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1406,
+              "id": 1437,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "250:6:2",
@@ -794,7 +794,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "446563656e7472616c697a65642050656e73696f6e20546f6b656e",
-              "id": 1407,
+              "id": 1438,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -813,10 +813,10 @@
           },
           {
             "constant": true,
-            "id": 1411,
+            "id": 1442,
             "name": "symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 1415,
+            "scope": 1446,
             "src": "316:37:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -825,7 +825,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1409,
+              "id": 1440,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "316:6:2",
@@ -837,7 +837,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "445054",
-              "id": 1410,
+              "id": 1441,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -856,10 +856,10 @@
           },
           {
             "constant": true,
-            "id": 1414,
+            "id": 1445,
             "name": "decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 1415,
+            "scope": 1446,
             "src": "360:35:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -868,7 +868,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 1412,
+              "id": 1443,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "360:5:2",
@@ -880,7 +880,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3138",
-              "id": 1413,
+              "id": 1444,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -898,7 +898,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1416,
+        "scope": 1447,
         "src": "176:223:2"
       }
     ],
@@ -910,5 +910,5 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.0",
-  "updatedAt": "2018-09-08T21:47:15.889Z"
+  "updatedAt": "2018-09-09T00:42:37.238Z"
 }
