@@ -20,7 +20,20 @@ export default class Demo extends Component {
     constructor(props, context) {
         super(props, context);
 
+        this.account = this.props.accounts[0];
         this.contracts = context.drizzle.contracts;
+
+        this.isRetiredCacheId = this.contracts.DecentralizedPension.methods.isRetired.cacheCall(this.account);
+    }
+
+    get isRetired() {
+        const decentralizedPension = this.props.contracts.DecentralizedPension;
+        if (decentralizedPension.isRetired[this.isRetiredCacheId]) {
+            console.log(decentralizedPension.isRetired[this.isRetiredCacheId].value);
+            return decentralizedPension.isRetired[this.isRetiredCacheId].value;
+        }
+
+        return false;
     }
 
     onDeposit = async () => {
@@ -33,6 +46,8 @@ export default class Demo extends Component {
         return (
             <div>
                 <h1>Your pension overview</h1>
+
+                <p>Your current status is <strong>{this.isRetired ? 'Pensioner' : 'Contributor'}</strong></p>
 
                 <p>
                     Your total contributions in {moment().format('MMM')}. {this.currentYear} have been {' '}
@@ -61,6 +76,13 @@ export default class Demo extends Component {
                     </FormGroup>
                     <Button onClick={this.onDeposit}>Deposit</Button>
                 </Form>
+
+                <hr/>
+
+                <h2>Claim tokens</h2>
+                <p>
+
+                </p>
             </div>
         );
     }
