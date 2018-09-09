@@ -5,6 +5,7 @@
     "bn-chai": "^1.0.1",
     "bn.js": "^4.11.8",
     "chai": "^4.1.2",
+    "dotenv": "^4.0.0",
     "ganache-cli": "^6.1.6",
     "openzeppelin-solidity": "^2.0.0-rc.1",
     "prettier": "^1.14.2",
@@ -23,7 +24,6 @@
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "css-loader": "0.28.7",
-    "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
     "drizzle": "^1.2.2",
     "drizzle-react": "^1.1.1",
@@ -73,10 +73,12 @@
   "scripts": {
     "start": "node scripts/start.js",
     "migrate:dev": "truffle migrate --network development",
+    "migrate:rinkeby": "truffle migrate --network rinkeby",
+    "migrate:kovan": "truffle migrate --network kovan",
     "build": "truffle compile && node scripts/build.js",
     "test:contracts": "truffle test",
     "test:web": "node scripts/test.js --env=jsdom",
-    "chain": "ganache-cli --mnemonic \"harsh wild kitchen defense nephew breeze cannon couple unknown endless render harbor\"",
+    "chain": "ganache-cli --networkId 12121212 --mnemonic \"harsh wild kitchen defense nephew breeze cannon couple unknown endless render harbor\"",
     "prepare": "npm run build"
   },
   "jest": {
