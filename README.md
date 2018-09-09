@@ -19,8 +19,8 @@ system nobody can be forced to become a member. Instead, we want to incentivize
 membership by
 
 - giving people who join early, more
-- paying people a higher pension if they paid higher contribution
-- paying people a longer pension if they paid for a long time
+- paying people a higher pension if they made higher contributions
+- paying people a longer pension if they contributed for a long time
 
 ## Members of Team Awesome
 
