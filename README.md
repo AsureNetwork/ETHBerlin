@@ -37,7 +37,7 @@ only deployed to the Rinkeby testnet.
 ## How-To Start
 1. Start your Browser with MetaMask and chose the Rinkeby Network
 2. You need ETH on Rinkeby Testnet (http://faucet.rinkeby.io)
-3. Go to https://ethberlin.asure.io 
+3. Go to [https://ethberlin.asure.io](https://ethberlin.asure.io) 
 
 ## Links
 
